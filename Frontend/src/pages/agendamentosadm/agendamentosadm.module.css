@@ -1,0 +1,1032 @@
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
+
+.pagina {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #ffffff;
+    color: #000000;
+
+    overflow-x: hidden;
+}
+
+.conteudo {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 58px 72px 85px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ANIMAÇÕES
+===================================================== */
+
+@keyframes aparecerPagina {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes aparecerTitulo {
+
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes aparecerFiltro {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes aparecerLinha {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes aparecerPaginacao {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.cabecalhoPagina {
+    animation: aparecerTitulo 0.7s ease both;
+
+    margin-bottom: 42px;
+}
+
+.cabecalhoPagina h1 {
+    margin: 0 0 12px;
+
+    font-size: 30px;
+    font-weight: 950;
+
+    letter-spacing: -1px;
+}
+
+.cabecalhoPagina p {
+    margin: 0;
+
+    color: #7b8495;
+
+    font-size: 15px;
+    font-weight: 450;
+}
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.filtros {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 42px;
+
+    animation: aparecerFiltro 0.7s ease both;
+    animation-delay: 0.15s;
+}
+
+.campoBusca {
+    width: min(407px, 100%);
+    max-width: 100%;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 16px;
+
+    background: #f5f5f5;
+
+    border-radius: 11px;
+
+    box-sizing: border-box;
+
+    transition:
+            background 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+.campoBusca:focus-within {
+    background: #eeeeee;
+
+    box-shadow:
+            0 0 0 2px rgba(0, 0, 0, 0.04);
+}
+
+.campoBusca svg {
+    color: #98a2b3;
+
+    font-size: 19px;
+
+    flex-shrink: 0;
+}
+
+.campoBusca input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #202020;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.campoBusca input::placeholder {
+    color: #9da6b6;
+}
+
+
+/* =====================================================
+   FILTROS DA DIREITA
+===================================================== */
+
+.filtrosDireita {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.filtroWrapper {
+    position: relative;
+}
+
+.botaoFiltro {
+    height: 44px;
+
+    padding: 0 17px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: #f5f5f5;
+
+    color: #344054;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+}
+
+.botaoFiltro:hover {
+    background: #eaeaea;
+
+    transform: translateY(-2px);
+}
+
+.botaoFiltro svg {
+    font-size: 16px;
+}
+
+.botaoFiltro svg:last-child {
+    font-size: 14px;
+
+    transition: transform 0.3s ease;
+}
+
+.iconeRotacionado {
+    transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.dropdown {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    min-width: 180px;
+
+    padding: 7px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+    box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.10);
+
+    z-index: 20;
+
+    animation: aparecerFiltro 0.2s ease both;
+}
+
+.dropdown button {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #333333;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease;
+}
+
+.dropdown button:hover {
+    background: #f3f3f3;
+}
+
+
+/* =====================================================
+   TABELA
+===================================================== */
+
+.tabelaWrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    animation: aparecerPagina 0.8s ease both;
+    animation-delay: 0.25s;
+}
+
+.tabelaWrapper table {
+    width: 100%;
+
+    min-width: 780px;
+
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+.tabelaWrapper thead th {
+    padding: 0 30px 10px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    color: #929cac;
+
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 0.3px;
+}
+
+.tabelaWrapper thead th:last-child {
+    text-align: center;
+}
+
+.tabelaWrapper tbody tr {
+    background: #f5f5f5;
+
+    animation: aparecerLinha 0.55s ease both;
+    animation-delay: var(--delay);
+
+    transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+}
+
+.tabelaWrapper tbody tr:hover {
+    background: #eeeeee;
+
+    transform: translateY(-2px);
+}
+
+.tabelaWrapper tbody td {
+    padding: 22px 30px;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+}
+
+.tabelaWrapper tbody td:first-child {
+    border-radius: 15px 0 0 15px;
+}
+
+.tabelaWrapper tbody td:last-child {
+    border-radius: 0 15px 15px 0;
+}
+
+
+/* =====================================================
+   COLUNAS
+===================================================== */
+
+.cliente {
+    color: #111111;
+
+    font-weight: 850;
+}
+
+.servico {
+    color: #526074;
+
+    font-weight: 750;
+}
+
+.horario {
+    color: #101010;
+
+    font-weight: 850;
+}
+
+.data {
+    color: #526074;
+
+    font-weight: 750;
+}
+
+.statusColuna {
+    text-align: center;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 96px;
+
+    padding: 5px 15px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 950;
+
+    letter-spacing: 0.2px;
+}
+
+.statusConcluido {
+    background: #d9fbe7;
+
+    color: #16803d;
+}
+
+.statusFaltou {
+    background: #fff1d6;
+
+    color: #9a5b00;
+}
+
+.statusPendente {
+    background: #e4e7eb;
+
+    color: #475467;
+}
+
+.statusCancelado {
+    background: #ffe0e0;
+
+    color: #e53939;
+}
+
+
+/* =====================================================
+   SEM RESULTADOS
+===================================================== */
+
+.semResultados {
+    text-align: center !important;
+
+    padding: 45px !important;
+
+    color: #929cac;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   RODAPÉ DA TABELA
+===================================================== */
+
+.rodapeTabela {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 28px;
+    padding: 0 15px;
+
+    animation: aparecerPaginacao 0.8s ease both;
+    animation-delay: 0.4s;
+}
+
+.rodapeTabela p {
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   PAGINAÇÃO
+===================================================== */
+
+.paginacao {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.paginacao button {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: #f4f5f7;
+
+    color: #344054;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 850;
+
+    cursor: pointer;
+
+    transition:
+            background 0.25s ease,
+            color 0.25s ease,
+            transform 0.25s ease;
+}
+
+.paginacao button:hover:not(:disabled) {
+    background: #e5e7eb;
+
+    transform: translateY(-3px);
+}
+
+.paginacao button:active:not(:disabled) {
+    transform: scale(0.92);
+}
+
+.paginacao button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+.paginacao .paginaAtiva {
+    background: #000000;
+
+    color: #ffffff;
+}
+
+.paginacao .paginaAtiva:hover {
+    background: #000000;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .conteudo {
+        padding: 50px 35px 70px;
+    }
+
+    .filtros {
+        flex-wrap: wrap;
+    }
+
+    .campoBusca {
+        width: 100%;
+        max-width: 407px;
+    }
+
+    .tabelaWrapper tbody td,
+    .tabelaWrapper thead th {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .conteudo {
+        padding: 35px 18px 55px;
+    }
+
+    .cabecalhoPagina {
+        margin-bottom: 30px;
+    }
+
+    .cabecalhoPagina h1 {
+        font-size: 25px;
+    }
+
+    .cabecalhoPagina p {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 15px;
+
+        margin-bottom: 30px;
+    }
+
+    .campoBusca {
+        max-width: none;
+        width: 100%;
+    }
+
+    .filtrosDireita {
+        width: 100%;
+    }
+
+    .filtroWrapper {
+        flex: 1;
+    }
+
+    .botaoFiltro {
+        width: 100%;
+    }
+
+    .dropdown {
+        left: 0;
+        right: auto;
+
+        width: 100%;
+    }
+
+    .rodapeTabela {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 0;
+
+        gap: 20px;
+    }
+
+    .paginacao {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR PEQUENO
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .cabecalhoPagina h1 {
+        font-size: 23px;
+    }
+
+    .filtrosDireita {
+        gap: 8px;
+    }
+
+    .botaoFiltro {
+        padding: 0 10px;
+
+        font-size: 11px;
+    }
+
+    .paginacao {
+        gap: 5px;
+    }
+
+    .paginacao button {
+        width: 34px;
+        height: 34px;
+    }
+
+    .tabelaWrapper table {
+        min-width: 560px;
+    }
+
+    .tabelaWrapper tbody td,
+    .tabelaWrapper thead th {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .tabelaWrapper tbody td {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+/* Observação: animações ficam ativas em todos os dispositivos.
+   A regra global "@media (prefers-reduced-motion: reduce) { * {
+   animation-duration: 0.01ms !important } }" que existia aqui
+   anulava TODAS as animações e transições (hover, cliques,
+   carregamento) do site inteiro, pois o seletor * é global mesmo
+   dentro de um CSS module. */
+
+
+/* Modal de acao (avisar/reagendar/cancelar). */
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    width: min(480px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal h2 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.modal p {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+}
+
+.modal textarea,
+.modal input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    font: inherit;
+}
+
+.modal label {
+    display: grid;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.modalAcoes {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 6px;
+}
+
+.modalAcoes button {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 800;
+    cursor: pointer;
+    background: #111;
+    color: #fff;
+}
+
+.modalAcoes button:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.modalAcoes .secundario {
+    background: #fff;
+    color: #111;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 400px) {
+    .modal {
+        padding: 20px 14px;
+    }
+}
+
+
+/* Filtro por barbearia (ADM) + lista em cards. */
+.filtroBarbearia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.filtroBarbearia span {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+#filtro-ativo {
+    background: var(--cor-destaque, #ff9c08);
+    color: #111;
+}
+
+.gradeCards {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    /* Cards da mesma linha ficam com a mesma altura; as imagens ficam no modal. */
+    align-items: stretch;
+    gap: 18px;
+}
+
+.cardAgendamento {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 5px 18px #0000000a;
+    animation: aparecerPagina 0.5s ease both;
+    animation-delay: var(--delay);
+}
+
+.cardTopo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.cardTopo h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+}
+
+.cardTopo p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.cardImagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cardImagens figure {
+    margin: 0;
+    flex: 1 1 120px;
+    max-width: 160px;
+    text-align: center;
+}
+
+.cardImagens img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #f0f0f0;
+}
+
+.cardImagens figcaption {
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #666;
+}
+
+.cardAcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.botaoVerMais {
+    align-self: flex-start;
+    border: 1px solid #1d2939;
+    border-radius: 8px;
+    padding: 8px 13px;
+    background: #fff;
+    color: #1d2939;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.botaoVerMais:hover {
+    background: #1d2939;
+    color: #fff;
+}
+
+.modalImagens {
+    width: min(760px, 100%);
+}
+
+.galeriaImagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.galeriaImagens figure {
+    margin: 0;
+    min-width: 0;
+}
+
+.galeriaImagens img {
+    display: block;
+    width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #f2f4f7;
+}
+
+.galeriaImagens figcaption {
+    margin-top: 7px;
+    color: #475467;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.acaoConcluir,
+.acaoFaltou {
+    border: 0;
+    border-radius: 8px;
+    padding: 9px 14px;
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.acaoConcluir { background: #16803d; }
+.acaoFaltou { background: #9a5b00; }
+.acaoConcluir:hover { background: #0d6630; }
+.acaoFaltou:hover { background: #774600; }
+
+.aguardandoAtendimento {
+    width: 100%;
+    margin: 0;
+    color: #667085;
+    font-size: 12px;
+}
+
+.historicoAtendimento {
+    border-top: 1px solid #eceef1;
+    padding-top: 12px;
+    color: #475467;
+    font-size: 12px;
+}
+
+.historicoAtendimento strong {
+    color: #1d2939;
+}
+
+.historicoAtendimento p {
+    margin: 5px 0 0;
+}
+
+.filtroBarbearia{flex-direction:column;align-items:flex-start}.filtroBotoes{display:flex;flex-wrap:wrap;gap:8px}.filtroAtual{font-size:12px;color:#475467}.filtroAtual strong{color:#111}.filtroAtivo{background:#111!important;color:#fff!important;border-color:#111!important}.gradeCards{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:1000px){.gradeCards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.gradeCards{grid-template-columns:repeat(1,minmax(0,1fr))}}
+
+@media (max-width: 640px) {
+    .overlay { align-items: flex-end; padding: 0; }
+    .modal { width: 100%; max-height: 90dvh; border-radius: 16px 16px 0 0; padding: 20px 16px calc(16px + env(safe-area-inset-bottom)); }
+    .modalAcoes { flex-direction: column-reverse; }
+    .modalAcoes button { width: 100%; }
+    .cardAgendamento { padding: 16px; }
+    .cardImagens figure { max-width: none; }
+    .cardAcoes > button { flex: 1 1 140px; min-height: 42px; }
+}

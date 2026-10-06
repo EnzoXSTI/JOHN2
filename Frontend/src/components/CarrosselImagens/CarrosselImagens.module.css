@@ -1,0 +1,120 @@
+.carrossel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagemWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.imagem {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+    transform: scale(1.08);
+
+    transition:
+            opacity 1s ease,
+            transform 4.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    filter: brightness(0.9);
+
+    pointer-events: none;
+}
+
+.imagem.ativa {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.imagem.saindo {
+    opacity: 0;
+    transform: scale(1.04);
+    transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+    pointer-events: none;
+
+    background:
+            linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0.08) 0%,
+                    rgba(0, 0, 0, 0) 45%,
+                    rgba(0, 0, 0, 0.35) 100%
+            );
+}
+
+.indicadores {
+    position: absolute;
+
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    max-width: 90%;
+
+    padding: 8px 12px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(8px);
+}
+
+.indicador,
+.indicadorAtivo {
+    border: none;
+    padding: 0;
+
+    height: 5px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+            width 0.5s ease,
+            opacity 0.5s ease,
+            background 0.5s ease;
+}
+
+.indicador {
+    width: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
+}
+
+.indicadorAtivo {
+    width: 28px;
+    background: #fff;
+    opacity: 1;
+}

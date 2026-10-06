@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base compartilhada: impede que padding estoure a largura do viewport e
+   garante que imagens não criem rolagem horizontal em telas pequenas. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  max-width: 100%;
+}
+
+/* Dobráveis fechados (~280px) e celulares estreitos: evita qualquer
+   estouro horizontal residual dos componentes. */
+@media (max-width: 400px) {
+  body {
+    overflow-x: clip;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Fonte mínima de 16px em controles evita o zoom automático do Safari/iOS. */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Evita que textos extensos e ações gerem rolagem horizontal no celular. */
+@media (max-width: 600px) {
+  body { overflow-x: clip; }
+  button, a { max-width: 100%; }
+  h1, h2, h3, p, span, small, strong { overflow-wrap: anywhere; }
+}
+
+:root {
+  --cor-fundo: #FFFFFF;
+  --cor-texto: #000000;
+  --cor-texto-2: #FFFFFF;
+  --cor-confirmar: #000000;
+  --cor-botao-2: #FFFFFF;
+  --cor-destaque: #FF9C08;
+  --cor-card-financeiro: #000000;
+  --cor-card: #F5F5F5;
+  --cor-card-3: #FFFFFF;
+  --cor-hover-branco: #FFFFFF;
+
+  --cor-texto-negativo: #B91C1C;
+  --cor-botao-negativo: #FEE2E2;
+
+  --cor-texto-positivo: #15803D;
+  --cor-botao-positivo: #DCFCE7;
+
+  --cor-texto-categorizante: #9CA3AF;
+  --cor-check: #2563EB;
+  --cor-selecionado-positivo: #53e529;
+
+
+  --cor-destaque-b: #FF9C08;
+  --cor-fundo-b: #000000;
+  --cor-texto-icone-b: #FF9C08;
+  --cor-card-b: #000000;
+}
+

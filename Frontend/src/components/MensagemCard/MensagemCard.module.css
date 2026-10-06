@@ -1,0 +1,204 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 9999;
+
+    padding: 20px;
+}
+
+
+.card {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 35px 30px 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.20);
+
+    animation: aparecer 0.25s ease;
+}
+
+
+.cardSucesso {
+    border-top: 5px solid #16a34a;
+}
+
+
+.cardErro {
+    border-top: 5px solid #dc2626;
+}
+
+
+.fechar {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    color: #666;
+
+    border-radius: 50%;
+}
+
+
+.fechar:hover {
+    background: #f1f1f1;
+}
+
+
+.icone {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    font-size: clamp(36px, 12vw, 55px);
+}
+
+
+.cardSucesso .icone {
+    color: #16a34a;
+}
+
+
+.cardErro .icone {
+    color: #dc2626;
+}
+
+
+.card h2 {
+    margin: 0 0 10px;
+
+    font-size: clamp(18px, 5.5vw, 24px);
+
+    color: #222;
+}
+
+
+.card p {
+    margin: 0 auto 25px;
+
+    max-width: 330px;
+
+    color: #666;
+
+    line-height: 1.5;
+
+    font-size: 15px;
+}
+
+
+.botao {
+    width: 100%;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.cardSucesso .botao {
+    background: #16a34a;
+}
+
+
+.cardErro .botao {
+    background: #dc2626;
+}
+
+
+.botao:hover {
+    opacity: 0.88;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .card {
+        max-height: 90dvh;
+        overflow-y: auto;
+        border-radius: 18px 18px 0 0;
+        padding: 30px 20px calc(22px + env(safe-area-inset-bottom));
+    }
+
+    .icone {
+        font-size: 45px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        padding: 20px 14px 18px;
+    }
+
+    .card p {
+        max-width: 100%;
+        font-size: 14px;
+    }
+}

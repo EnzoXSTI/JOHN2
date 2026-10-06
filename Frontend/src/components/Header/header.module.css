@@ -1,0 +1,489 @@
+.header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 36px;
+    display: block;
+}
+
+
+/* ==================================================
+   MENU
+================================================== */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+/* ==================================================
+   BOTÃO HAMBÚRGUER
+================================================== */
+
+.menuMobile {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: #000;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   CADASTRAR
+================================================== */
+
+.cadastro {
+    position: relative;
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: #000;
+
+    font-size: 15px;
+
+    font-weight: bolder;
+
+    transition: color 0.25s ease;
+}
+
+.cadastro::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -4px;
+
+    width: 0;
+    height: 3px;
+
+    background: var(--cor-destaque);
+
+    border-radius: 999px;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.cadastro:hover {
+    color: #000;
+}
+
+.cadastro:hover::after {
+    width: 100%;
+}
+
+
+/* ==================================================
+   LOGIN
+================================================== */
+
+.login {
+    text-decoration: none;
+
+    background: #000;
+
+    color: #fff;
+
+    padding: 10px 28px;
+
+    border-radius: 999px;
+
+    border: 1px solid transparent;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            background-color 0.25s ease,
+            color 0.25s ease,
+            border-color 0.25s ease;
+}
+
+.login:hover {
+    background: #fff;
+
+    color: #000;
+
+    border-color: #000;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+            0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.login:active {
+    transform:
+            translateY(-1px)
+            scale(0.97);
+
+    box-shadow:
+            0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==================================================
+   HISTÓRICO
+================================================== */
+
+.historico {
+    position: relative;
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: #000;
+
+    font-size: 15px;
+
+    font-weight: bolder;
+
+    transition: color 0.25s ease;
+
+    background-color: white;
+}
+
+.historico::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -4px;
+
+    width: 0;
+    height: 3px;
+
+    background: var(--cor-destaque);
+
+    border-radius: 999px;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.historico:hover::after {
+    width: 100%;
+}
+
+
+/* ==================================================
+   BOTÃO SAIR
+================================================== */
+
+.sair {
+    background: #000;
+
+    color: #fff;
+
+    padding: 10px 28px;
+
+    border-radius: 999px;
+
+    border: 1px solid transparent;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            background-color 0.25s ease,
+            color 0.25s ease,
+            border-color 0.25s ease;
+}
+
+.sair:hover {
+    background: #fff;
+
+    color: #000;
+
+    border-color: #000;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+            0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.sair:active {
+    transform:
+            translateY(-1px)
+            scale(0.97);
+
+    box-shadow:
+            0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==================================================
+   USUÁRIO
+================================================== */
+
+.usuario {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #e5e5e5;
+
+    color: #999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    transition:
+            transform 0.25s ease,
+            background-color 0.25s ease,
+            color 0.25s ease;
+}
+
+.usuario:hover {
+    background: #d5d5d5;
+
+    color: #666;
+
+    transform: scale(1.05);
+}
+
+
+/* ==================================================
+   FOTO DO PERFIL
+================================================== */
+
+.fotoPerfil {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* ==================================================
+   MOBILE
+   ATÉ 420PX
+================================================== */
+
+/* A navegação vira menu recolhível também em tablets estreitos; 420px fazia
+   os links do administrador ultrapassarem a barra em celulares maiores. */
+@media screen and (max-width: 768px) {
+
+    .container {
+        height: 64px;
+
+        padding: 0 18px;
+    }
+
+
+    /* ==============================================
+       LOGO
+    ============================================== */
+
+    .logo img {
+        height: 32px;
+    }
+
+
+    /* ==============================================
+       HAMBÚRGUER
+    ============================================== */
+
+    .menuMobile {
+        display: flex;
+    }
+
+
+    /* ==============================================
+       MENU FECHADO
+    ============================================== */
+
+    .menu {
+        display: none;
+
+        position: absolute;
+
+        top: 64px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+
+        background: #fff;
+
+        border-top: 1px solid #e5e5e5;
+
+        box-shadow:
+                0 8px 15px rgba(0, 0, 0, 0.10);
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+
+    /* ==============================================
+       MENU ABERTO
+    ============================================== */
+
+    .menu.menuAberto {
+        display: flex;
+    }
+
+
+    /* ==============================================
+       CADASTRAR
+    ============================================== */
+
+    .cadastro {
+        width: 100%;
+
+        padding: 12px 0;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ==============================================
+       HISTÓRICO
+    ============================================== */
+
+    .historico {
+        width: 100%;
+
+        padding: 12px 0;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ==============================================
+       LOGIN
+    ============================================== */
+
+    .login {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ==============================================
+       SAIR
+    ============================================== */
+
+    .sair {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ==============================================
+       PERFIL
+    ============================================== */
+
+    .usuario {
+        margin: 0 auto;
+    }
+
+}
+
+
+/* Dobráveis fechados e celulares estreitos: menu mais compacto. */
+@media (max-width: 400px) {
+    .menu {
+        padding: 14px;
+        gap: 10px;
+    }
+}

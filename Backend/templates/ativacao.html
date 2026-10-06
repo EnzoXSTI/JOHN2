@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortaê</title>
+</head>
+<!-- Estilos inline são intencionais: os principais provedores de e-mail não
+     aplicam CSS externo com a mesma consistência que um navegador. -->
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;color:#343434;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="padding:32px 12px;background:#f4f4f4;">
+        <tr><td align="center">
+            <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="width:100%;max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden;">
+                <tr><td align="center" style="padding:28px;background:#111111;color:#ffffff;">
+                    <span style="font-size:30px;font-weight:700;letter-spacing:1px;">Cortaê</span>
+                </td></tr>
+                <tr><td style="padding:36px 30px;text-align:center;">
+                    <h1 style="margin:0 0 18px;font-size:24px;color:#242424;">Olá, {{ nome|e }}!</h1>
+                    <p style="margin:0;color:#555555;font-size:16px;line-height:1.65;">{{ mensagem|e|replace('\n', '<br>')|safe }}</p>
+
+                    {% if exibir_codigo %}
+                    <!-- A caixa existe somente em fluxos que enviam um código de 6 dígitos. -->
+                    <div style="margin:28px 0;padding:17px 12px;background:#d57c15;border-radius:8px;color:#ffffff;font-size:30px;font-weight:700;letter-spacing:7px;">{{ codigo|e }}</div>
+                    {% endif %}
+
+                    {% if mensagem_secundaria %}
+                    <p style="margin:22px 0 0;color:#666666;font-size:15px;line-height:1.65;">{{ mensagem_secundaria|e|replace('\n', '<br>')|safe }}</p>
+                    {% endif %}
+                    <p style="margin:28px 0 0;color:#8a8a8a;font-size:12px;line-height:1.5;">Se você não reconhece esta ação, ignore este e-mail.</p>
+                </td></tr>
+                <tr><td align="center" style="padding:18px;background:#eeeeee;color:#777777;font-size:12px;">© 2026 Cortaê</td></tr>
+            </table>
+        </td></tr>
+    </table>
+</body>
+</html>

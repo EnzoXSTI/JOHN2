@@ -1,0 +1,208 @@
+.footer {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding-top: 55px;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 0 40px 50px;
+    box-sizing: border-box;
+}
+
+.logoArea {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.logoArea img {
+    width: 150px;
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+
+.logoArea p {
+    color: #bdbdbd;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+}
+
+.logoArea strong {
+    color: #fff;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #bdbdbd;
+    transition: .25s;
+}
+
+.links a:hover {
+    color: var(--cor-destaque);
+    transform: translateX(5px);
+}
+
+.redes {
+    display: flex;
+    gap: 22px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.redes a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    transition: .3s;
+    flex-shrink: 0;
+}
+
+.redes a:hover {
+    background: var(--cor-destaque);
+    color: #000;
+    transform: translateY(-5px) rotate(8deg);
+}
+
+.copy {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    text-align: center;
+    color: #9c9c9c;
+    padding: 20px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .footer {
+        padding-top: 45px;
+    }
+
+    .container {
+        padding: 0 30px 40px;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .logoArea {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .links {
+        min-width: 140px;
+    }
+
+    .redes {
+        min-width: 140px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        padding-top: 25px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 0 15px 25px;
+    }
+
+    /* Esconde logo, descrição e links */
+    .logoArea,
+    .links {
+        display: none;
+    }
+
+    /* Mostra somente as redes sociais */
+    .redes {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .redes a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .copy {
+        padding: 15px 10px;
+        font-size: 11px;
+        line-height: 18px;
+    }
+}
+
+
+/* Celulares pequenos */
+
+@media (max-width: 400px) {
+
+    .footer {
+        padding-top: 20px;
+    }
+
+    .container {
+        padding: 0 10px 20px;
+    }
+
+    .redes {
+        gap: 12px;
+    }
+
+    .redes a {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .copy {
+        font-size: 10px;
+        padding: 12px 8px;
+    }
+}
